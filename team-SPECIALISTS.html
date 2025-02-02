@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./ImageEnhancer_LOGO copy.png" type="image/x-icon">
+    <title>DHAN FLY HIGH - Team Specialists</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        :root {
+            --primary-blue: #2A4D6E;
+            --accent-orange: #FF6B35;
+            --light-bg: #f8f9fa;
+            --dark-text: #2D3047;
+        }
+        @import url('https://fonts.googleapis.com/css2?family=Enriqueta&display=swap');
+        .clg-name {
+            font-family: 'Enriqueta', sans-serif;
+            text-align: center;
+            font-size: 1.6vw;
+            letter-spacing: 1vw;
+            font-weight: bold;
+            height: 30px;
+        }
+
+        .sunny-morning-gradient {
+            background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+            background-size: cover;
+            color: black;
+        }
+        .project-detail-card {
+            background: white;
+            border-radius: 8px;
+            padding: 2rem;
+            margin: 1.5rem auto;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            max-width: 1200px;
+            transition: all 0.5s ease;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .project-detail-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .team-title {
+            color: var(--primary-blue);
+            font-size: 2.5rem;
+            text-align: center;
+            margin: 2rem 0;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            animation: titleEntrance 1s ease-out forwards;
+        }
+
+        .section-heading {
+            color: var(--accent-orange);
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid var(--primary-blue);
+            padding-bottom: 0.5rem;
+        }
+
+        .project-description-text {
+            color: var(--dark-text);
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+
+        .team-member-list {
+            list-style-type: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .team-member-item {
+            background: var(--light-bg);
+            padding: 1.2rem;
+            border-radius: 6px;
+            border-left: 4px solid var(--accent-orange);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .team-member-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 5px 15px rgba(42, 77, 110, 0.1);
+        }
+
+        .team-role {
+            color: var(--primary-blue);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .nav-main-button {
+            background-color: var(--primary-blue);
+            border: none;
+            padding: 0.8rem 2rem;
+            font-size: 1.1rem;
+            transition: all 0.4s ease !important;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-main-button::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: rgba(255,255,255,0.1);
+            transform: rotate(45deg);
+            transition: all 0.5s ease;
+        }
+
+        .nav-main-button:hover {
+            background-color: var(--accent-orange);
+            transform: translateY(-2px);
+        }
+
+        .nav-main-button:hover::after {
+            left: 120%;
+        }
+
+        .institute-footer {
+            background: var(--primary-blue);
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        @keyframes titleEntrance {
+            0% { opacity: 0; transform: translateY(-50px) rotate(-5deg); }
+            100% { opacity: 1; transform: translateY(0) rotate(0); }
+        }
+
+        @keyframes cardPulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+            100% { transform: scale(1); }
+        }
+
+        .project-detail-card:hover {
+            animation: cardPulse 1.5s ease infinite;
+        }
+
+        @media (max-width: 768px) {
+            .team-title {
+                font-size: 2rem;
+                animation: mobileTitleEntrance 1s ease-out;
+            }
+
+            .project-detail-card {
+                padding: 1.5rem;
+                margin: 1rem;
+            }
+
+            .section-heading {
+                font-size: 1.5rem;
+            }
+
+            @keyframes mobileTitleEntrance {
+                0% { opacity: 0; transform: scale(0.8); }
+                100% { opacity: 1; transform: scale(1); }
+            }
+        }
+
+        .sunny-morning-gradient {
+    background: linear-gradient(135deg, #FFD700 0%, #FF6B35 100%);
+}
+    </style>
+</head>
+<body>
+    <div class="team-profile-container">
+        <div class="container-fluid clg-name sunny-morning-gradient">
+            DHANEKULA INSTITUTE OF ENGINEERING & TECHNOLOGY
+        </div>
+
+        <div class="container">
+            <header>
+                <h1 class="team-title">TEAM SPECIALISTS</h1>
+            </header>
+
+            <section class="project-detail-card">
+                <h2 class="section-heading">Project Title</h2>
+                <p class="text-unique">3D Landslide Mapping and Rescue Support System Using Drones</p>
+            </section>
+
+            <section class="project-detail-card">
+                <h2 class="section-heading">Problem Statement</h2>
+                <p class="text-unique">Landslide rescue operations face challenges due to lack of real-time terrain data and safe path identification. Manual surveys are slow and risky, leading to delayed rescues and increased environmental impact.</p>
+            </section>
+
+            <section class="project-detail-card">
+                <h2 class="section-heading">Solution Overview</h2>
+                <div class="text-unique">
+                    <p>Advanced drone-based system features:</p>
+                    <ul>
+                        <li>Pre-landslide terrain mapping</li>
+                        <li>Post-disaster comparative analysis</li>
+                        <li>Real-time safe route identification</li>
+                        <li>AI-powered hazard detection</li>
+                        <li>Integrated communication system</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="project-detail-card">
+                <h2 class="section-heading">Project Team</h2>
+                <div >
+                    <ul class="team-member-list">
+                        <li class="team-member-item"><span class="team-role">K. Geetha Sai Manikanta</span>Project Executive (CSE-AI&ML)</li>
+                        <li class="team-member-item"><span class="team-role">G. Deekshith</span>System Integration (CSE-AI&ML)</li>
+                        <li class="team-member-item"><span class="team-role">K. Bhavani</span>Technical Architect (ECE)</li>
+                        <li class="team-member-item"><span class="team-role">S. Krushma</span>Quality Assurance (CSE-AI&ML)</li>
+                        <li class="team-member-item"><span class="team-role">G. Venkat Lokesh</span>Safety Compliance (CSE-AI&ML)</li>
+                        <li class="team-member-item"><span class="team-role">K. Yaswitha</span>Testing (CSE)</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="project-detail-card">
+                <h2 class="section-heading">Technical Requirements</h2>
+                <div class="row">
+                    <div class="col-md-6">
+                        <ul class="text-unique">
+                            <li>Wi-Fi & Telemetry</li>
+                            <li>Radio Controller (ESC)</li>
+                            <li>LiDAR Sensors</li>
+                            <li>Jetson Orin</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <ul class="text-unique">
+                            <li>Video Transmission Module</li>
+                            <li>Ultrasonic Sensors</li>
+                            <li>Custom Drone Frame</li>
+                            <li>Communication Module</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <div class="text-center my-5">
+                <button class="nav-main-button" onclick="window.location.href='./dronex-website.html'">
+                    Back to Main Page
+                </button>
+            </div>
+        </div>
+
+        <footer class="institute-footer">
+            <p>&copy; 2025 Dhanekula Institute of Engineering & Technology. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const projectCards = document.querySelectorAll('.project-detail-card');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            projectCards.forEach(card => observer.observe(card));
+        });
+    </script>
+</body>
+</html>
